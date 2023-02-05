@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import Layout from "./Layout";
+import Home from "./Home";
+import NewPost from "./NewPost";
+import PostPage from "./PostPage";
+import About from "./About";
+import Missing from "./Missing";
+import { Route, Routes, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 function App() {
+
+  // const navigate = useNavigate(); instead of history
+  // navigate('/') insted of history.push('/')
+  // Switch is replaced with Routes
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+<Routes>
+  <Route path="/" element={<Home/>}/>
+  <Route path="/books" element={<BookList/>}/>
+
+</Routes>
+  
+)}
 
 export default App;
